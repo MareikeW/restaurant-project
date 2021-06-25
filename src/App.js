@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      Hello World!
+
       <Contact />
     </div>
   );

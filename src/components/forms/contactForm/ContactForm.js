@@ -59,8 +59,8 @@ function ContactForm() {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
-        <div>
+      <Form onSubmit={handleSubmit} className="grid-container">
+        <div className="fullName">
           <input
             className={isFullNameError ? "red" : null}
             type="text"
@@ -71,7 +71,7 @@ function ContactForm() {
           />
         </div>
 
-        <div>
+        <div className="email">
           <input
             className={isEmailError ? "red" : null}
             type="email"
@@ -82,7 +82,7 @@ function ContactForm() {
           />
         </div>
 
-        <div>
+        <div className="phone">
           <input
             className={isPhoneError ? "red" : null}
             type="tel"
@@ -93,7 +93,7 @@ function ContactForm() {
           />
         </div>
 
-        <div>
+        <div className="message">
           <textarea
             className={isMessageError ? "red" : null}
             placeholder="your message*"
@@ -102,32 +102,22 @@ function ContactForm() {
             onChange={handleChange}
           />
         </div>
-
-        <input type="submit" value="Submit" />
-        <p className="onSubmitText">{onSubmitMessage}</p>
-        <div className="input-error check_box">
+        <div className="submit">
+          <input type="submit" value="Submit" />
+          <p className="onSubmitText">{onSubmitMessage}</p>
+        </div>
+        <div className="check_box">
           <label>
             <input
               type="checkbox"
               checked={isSubscribed}
               onChange={handleSubscribed}
             />
-            I'm happy to receive your emails
+            Tick if you'd like us to keep in touch with you about all our
+            restaurants with exclusive news and advance booking opportunities.{" "}
+            <a href="/">data policy and protection can be found here</a>.
           </label>
         </div>
-
-        <p className="subscribeText">
-          We’d like to keep in touch with you about all our restaurants with
-          exclusive news and advance booking opportunities. We will contact you
-          about special events, new openings as well as the latest seasonal
-          menus. We will keep your data secure, and of course would never sell
-          or share data. You can change your mind at any time by clicking
-          unsubscribe on any email you receive.{" "}
-          <a href="/">
-            Further detail on our data policy and protection can be found here
-          </a>
-          .
-        </p>
       </Form>
     </Container>
   );
