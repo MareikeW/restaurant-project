@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Form, Container } from "./ContactFormStyles";
+import { Form, Container, ContactTitle } from "./ContactFormStyles";
 
 function ContactForm() {
   const [formInput, setFormInput] = useState({
@@ -14,6 +14,7 @@ function ContactForm() {
   const [isPhoneError, setIsPhoneError] = useState(false);
   const [isMessageError, setIsMessageError] = useState(false);
   const [onSubmitMessage, setOnSubmitMessage] = useState("");
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -27,8 +28,8 @@ function ContactForm() {
   }
 
   function handleSubmit(e) {
-    console.log("1");
     e.preventDefault();
+    setHasSubmitted(true);
     setIsFullNameError(!formInput.fullName ? true : false);
     setIsEmailError(!formInput.email ? true : false);
     setIsPhoneError(!formInput.phone ? true : false);
@@ -36,20 +37,25 @@ function ContactForm() {
   }
 
   useEffect(() => {
-    if (!isFullNameError && !isEmailError && !isPhoneError && !isMessageError) {
-      console.log(isFullNameError);
-      setOnSubmitMessage("Thank you");
-      setFormInput({
-        fullName: "",
-        email: "",
-        phone: "",
-        message: ""
-      });
-      // send to database inc issubscribed
-    } else {
-      console.log(isFullNameError);
-      setOnSubmitMessage("Please complete all required fields");
-      return null;
+    if (hasSubmitted) {
+      if (
+        !isFullNameError &&
+        !isEmailError &&
+        !isPhoneError &&
+        !isMessageError
+      ) {
+        setOnSubmitMessage("Thank you");
+        setFormInput({
+          fullName: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+        // send to database inc issubscribed
+      } else {
+        setOnSubmitMessage("Please complete all required fields");
+        return null;
+      }
     }
   }, [isFullNameError, isEmailError, isPhoneError, isMessageError]);
 
@@ -60,6 +66,8 @@ function ContactForm() {
   return (
     <Container>
       <Form onSubmit={handleSubmit} className="grid-container">
+        <ContactTitle className="title">Get in touch</ContactTitle>
+
         <div className="fullName">
           <input
             className={isFullNameError ? "red" : null}
@@ -113,9 +121,8 @@ function ContactForm() {
               checked={isSubscribed}
               onChange={handleSubscribed}
             />
-            Tick if you'd like us to keep in touch with you about all our
-            restaurants with exclusive news and advance booking opportunities.{" "}
-            <a href="/">data policy and protection can be found here</a>.
+            Tick to stay up to date with exclusive news and priority booking.{" "}
+            <a href="/">Read our data policy</a>.
           </label>
         </div>
       </Form>

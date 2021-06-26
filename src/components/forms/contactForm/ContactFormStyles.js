@@ -8,6 +8,18 @@ export const Container = styled.div`
   background-color: darkgreen;
   padding: 2em;
   box-sizing: border-box;
+
+  @media (min-width: 1000px) {
+    width: 60%;
+  }
+`;
+
+export const ContactTitle = styled.h2`
+  padding: 1em;
+  color: whitesmoke;
+  font-size: 1.4em;
+  padding: 0;
+  margin: 0 auto;
 `;
 
 export const Form = styled.form`
@@ -18,7 +30,8 @@ export const Form = styled.form`
     display: block;
     width: 300px;
     font-size: 1.2rem;
-    @media (min-width: 1100px) {
+    color: whitesmoke;
+    @media (min-width: 1000px) {
       width: unset;
     }
   }
@@ -27,9 +40,12 @@ export const Form = styled.form`
     color: blue;
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1000px) {
     display: grid;
     grid-gap: 10px;
+    .title {
+      grid-area: title;
+    }
     .fullName {
       grid-area: left1;
     }
@@ -49,8 +65,9 @@ export const Form = styled.form`
       grid-area: bottom2;
     }
 
-    grid-template-columns: 29% 25% auto;
+    grid-template-columns: 50% 50% auto;
     grid-template-areas:
+      "title title ."
       "left1 right ."
       "left2 right ."
       "left3 right ."
@@ -63,6 +80,9 @@ export const Form = styled.form`
     border: 0;
     margin-top: 0.8em;
     font-size: 1.3rem;
+    @media (min-width: 1000px) {
+      width: 90%;
+    }
   }
 
   textarea {
@@ -74,6 +94,7 @@ export const Form = styled.form`
 
     @media (min-width: 1000px) {
       height: 250px;
+      width: 100%;
     }
   }
 
@@ -96,6 +117,7 @@ export const Form = styled.form`
   .onSubmitText {
     margin-top: 1em;
     width: 300px;
+    color: whitesmoke;
   }
 
   .red {
