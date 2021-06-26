@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Contact from "./pages/Contact";
 
+
 /* Add react router here */
 /* Add global styles component here */
 function App() {
