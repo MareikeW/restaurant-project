@@ -2,6 +2,7 @@ import GlobalStyle from "./globalStyles";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Contact from "./pages/Contact";
+import Menu from "./components/menu/Menu";
 
 
 /* Add react router here */
@@ -33,7 +34,7 @@ function App() {
             </Route>
 
             <Route path="/menu">
-              Menu
+              <Menu />
             </Route>
 
             <Route exact path="/order">
