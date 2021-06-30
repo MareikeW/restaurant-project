@@ -1,6 +1,6 @@
 import GlobalStyle from "./globalStyles";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
+import Homepage from "./components/homepage/Homepage";
 import Contact from "./pages/Contact";
 import Menu from "./components/menu/Menu";
 
@@ -14,7 +14,7 @@ function App() {
       <Router>
           <Switch>
             <Route exact path="/">
-              Landing Page
+              <Homepage />
             </Route>
 
             <Route path="/about">
