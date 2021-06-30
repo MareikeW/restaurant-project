@@ -66,6 +66,21 @@ img{
    max-width: 1500px;
    margin: 0 auto;
 }
+.section{
+   margin: 2rem auto;
+   width: 100%;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: var(--white);
+}
+.section__header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--primary-col);
+   padding: 1rem 1.5rem ;
+   text-transform: capitalize;
+   color: var(--white);
+}
 
 `;
 
