@@ -8,7 +8,7 @@ export default function MenuSlide(){
       <section className="section meal--slide-section">
    <div className="section__header">
       <h2 className="section__title">Dishes you will love.</h2>
-      <a href="#" className="a--link">see all</a>
+      <a href="/menu" className="a--link">see all</a>
    </div>
    
    <ul className="menu__slide-container">

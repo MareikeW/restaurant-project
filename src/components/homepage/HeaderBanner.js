@@ -18,7 +18,7 @@ export default function HeaderBanner(){
             <p className="header__banner-content-text">
                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dignissimos nesciunt iusto, eligendi animi, sapiente fugit? Ipsa non.
             </p>
-            <a href="#" className="btn btn--link">order now</a>
+            <a href="/menu" className="btn btn--link">order now</a>
          </div>
     </div>
 <div className="header__banner-infomatics-wrapper">
@@ -54,7 +54,7 @@ export default function HeaderBanner(){
             <p className="header__banner-content-text">
                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dignissimos nesciunt iusto, eligendi animi, sapiente fug.
             </p>
-            <a href="#" className="btn btn--link">booknow</a>
+            <a href="/reservation" className="btn btn--link">book now</a>
          </div>
     </div>
 <div className="header__banner-infomatics-wrapper">
