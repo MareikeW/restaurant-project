@@ -45,19 +45,27 @@ function ContactForm() {
         !isMessageError
       ) {
         setOnSubmitMessage("Thank you");
+        setIsSubscribed(false);
         setFormInput({
           fullName: "",
           email: "",
           phone: "",
           message: ""
         });
+        setHasSubmitted(false);
         // send to database inc issubscribed
       } else {
         setOnSubmitMessage("Please complete all required fields");
         return null;
       }
     }
-  }, [isFullNameError, isEmailError, isPhoneError, isMessageError]);
+  }, [
+    hasSubmitted,
+    isFullNameError,
+    isEmailError,
+    isPhoneError,
+    isMessageError
+  ]);
 
   function handleSubscribed() {
     setIsSubscribed(!isSubscribed);
