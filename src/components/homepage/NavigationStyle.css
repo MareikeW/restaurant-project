@@ -1,18 +1,20 @@
 .header{
-   position: fixed;
+   position: sticky;
    top: 0;
    width: 100%;
-   padding:1rem 1.5rem;
+   padding:1rem ;
    background-color: #fff;
    z-index: 100;
    display:flex;
    justify-content: space-between;
+   align-items: center;
 }
 .navigation{
 background-color: inherit;
 }
 .navigation__list{
    display: flex;
+   align-items: center;
 }
 .navigation__item{
    list-style: none;
@@ -45,7 +47,7 @@ text-align: center;
    right: 0;
    padding-top: 3rem;
    overflow-y: auto;
-   display: none;
+   /* display: none; */
 }
 .navigation__list{
     flex-direction: column;
